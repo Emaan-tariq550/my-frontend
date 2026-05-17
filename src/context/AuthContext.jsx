@@ -8,7 +8,7 @@ export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem('acadex_token'));
   const [loading, setLoading] = useState(true);
 
-  const API = 'http://localhost:5000/api';
+  const API = import.meta.env.VITE_API_URL || 'https://my-backend-taqb.vercel.app/api';
 
   // Set axios default auth header
   useEffect(() => {
